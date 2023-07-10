@@ -1,0 +1,37 @@
+{% args value %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parzival_other</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../static/index.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-500 h-[94vh]">
+    <nav class="bg-slate-700/60 h-16 md:h-20 w-full flex justify-between items-center px-4 md:px-6">
+        <a href="/" id="home" class="font-bold p-2 bg-gradient-to-br from-cyan-600 via-violet-600 to-rose-700 text-slate-800 rounded-md shadow-lg hover:text-slate-950 transition-color duration-500">Parzival</a>
+        <div class="h-full flex justify-between items-center gap-4">
+            <button type="button" onclick="shutdown()" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">Shutdown</button>
+            <a href="/logout" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">Log Out</a>
+            <a href="/other" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">other</a>
+        </div>
+    </nav>
+    <section class="my-8 md:my-12 w-[90%] mx-auto flex justify-between items-center flex-col md:flex-row gap-y-2">
+        <h2 class="md:text-2xl text-lg hover:text-slate-300">Terminal Communicate</h2>
+        <p class="md:text-lg text-sm hover:text-slate-300">BY : HOR KIMHOUY</p>
+    </section>
+    <section class="my-8 md:my-12 mx-auto rounded-3xl bg-slate-300 shadow-md shadow-slate-900 bg-slate-900 w-[85%] md:w-[80%] h-2/3 px-6 pb-6">
+        <div class="flex justify-end pt-2">
+            <a href="/order/delete" class="bg-slate-400 px-2 py-1 rounded-full text-xs hover:bg-slate-300 hover-text-slate-400 transition-color duration-500">Delete</a>
+        </div>
+        <div class="h-[80%] w-full p-2 md:p-4 overflow-y-auto rounded-lg text-slate-300">
+            {% for i in range(len(value.text)) %} <div class="flex gap-2"> <div>{{i}}.</div><div>{{ value.text[i] }}</div> </div> {% endfor %}
+        </div>
+        <form action="" method="post" class="h-[20%] w-full flex justify-center items-center px-1 md:px-24 border-t-2 border-slate-300">
+            <input type="text" name="text-box" id="text-box" class="w-4/5 md:w-5/6 rounded-l-lg px-2 h-8" maxlength="255" placeholder="Enter String">
+            <button type="submit" class="w-1/5 md:w-1/6 h-8 px-2 py-1 bg-slate-600 text-slate-200 rounded-r-lg ">Send</button>
+        </form>
+    </section>
+</body>
+</html>

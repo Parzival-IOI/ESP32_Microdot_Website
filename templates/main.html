@@ -1,0 +1,60 @@
+{% args value %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Parzival</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../static/index.js"></script>
+    </head>
+    <body class="bg-slate-950 text-slate-500">
+        <nav class="bg-slate-700/60 h-16 md:h-20 w-full flex justify-between items-center px-4 md:px-6">
+            <a href="/" id="home" class="font-bold p-2 bg-gradient-to-br from-cyan-600 via-violet-600 to-rose-700 text-slate-800 rounded-md shadow-lg hover:text-slate-950 transition-color duration-500">Parzival</a>
+            <div class="h-full flex justify-between items-center gap-4">
+                <button type="button" onclick="shutdown()" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">Shutdown</button>
+                <a href="/logout" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">Log Out</a>
+                <a href="/other" class="font-bold p-2 text-slate-300 bg-slate-700 rounded-md hover:text-slate-200 hover:bg-slate-600 transition-color duration-500">other</a>
+            </div>
+        </nav>
+        <section class="my-8 md:my-12 w-[90%] mx-auto flex justify-between items-center flex-col md:flex-row gap-y-2">
+            <h2 class="md:text-2xl text-lg hover:text-slate-300">Welcome to ESP32 Web Server</h2>
+            <p class="md:text-lg text-sm hover:text-slate-300">BY : HOR KIMHOUY</p>
+        </section>
+        <section class="my-8 md:my-12 mx-auto rounded-xl bg-slate-300 shadow-md shadow-slate-900 bg-slate-900 w-[80%] md:w-[90%] h-[300vh] sm:h-[200vh] lg:h-[100vh] p-4">
+            <div class="w-full h-full grid grid-cols-1 grid-rows-9  sm:grid-cols-2 sm:grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-0.5 bg-slate-300 ">
+                <div class="bg-slate-900 flex flex-col gap-8 justify-center items-center">
+                    <div class="flex items-center justify-center gap-4">
+                        <p>Toggle LED</p>
+                        <p class="w-4 aspect-square rounded-full {% if value.led == 1 %} bg-green-400 animate-ping {% else %} bg-rose-500 {% endif %}" id="col"></p>
+                    </div>
+                    <button type="button" onclick="Led()" class="bg-slate-700 px-4 py-2 rounded-xl hover:text-slate-400">Toggle</button>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center">
+                    <div>Mantainance</div>
+                </div>
+                <div class="bg-slate-900 grid place-items-center col-span-1 sm:col-span-2 lg:col-span-1">
+                    <div>Mantainance</div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
